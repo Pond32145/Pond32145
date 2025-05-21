@@ -10,7 +10,7 @@
 
 ### 👨‍💻 About Me
 
-- 🧠 Fullstack Developer (สาย backend ก็แน่น frontend ก็พอไหว)
+- 🧠 Fullstack Developer 
 - 🔧 Stack ที่ชอบ: Java, .NET, PostgreSQL
 - 📊 สนใจด้าน: DevOps : Docker, GitHub Actions, CI/CD
 
@@ -39,11 +39,11 @@
 
 ### 📫 Contact Me
 
-- 📧 Email: m.khongphiwattana@gmail.com
-- [LinkedIn](https://www.linkedin.com/in/mongkon-khongphiwatthana-13965b2b0)
+- 📧 Email: pondm.32145@gmail.com
+- [LinkedIn]()
 
 ---
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Mongkol30&style=flat-square&color=blue" alt=""/>
+  <img src="https://komarev.com/ghpvc/?username=Pond32145&style=flat-square&color=blue" alt=""/>
 </p>
