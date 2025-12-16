@@ -2,23 +2,26 @@ name: Generate Pacman Contribution Graph
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"   # รันทุกวัน
   workflow_dispatch:
 
 jobs:
   generate:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
-      - uses: maurodesouza/pacman-contribution-graph@main
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate pacman graph
+        uses: maurodesouza/pacman-contribution-graph-action@main
         with:
           github_user_name: Pond32145
 
-      - name: Commit files
+      - name: Commit and push
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add .
           git commit -m "Generate pacman contribution graph" || exit 0
           git push
