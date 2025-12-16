@@ -122,20 +122,16 @@
 </picture> -->
 
 <div align="center">
-
-  <!-- Dark mode -->
   <img
-    src="https://raw.githubusercontent.com/Pond32145/Pond32145/output/pacman-contribution-graph-dark.svg#gh-dark-mode-only"
-    alt="pacman contribution graph dark"
+    src="https://raw.githubusercontent.com/Pond32145/Pond32145/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only"
+    alt="snake dark"
   />
-
-  <!-- Light mode -->
   <img
-    src="https://raw.githubusercontent.com/Pond32145/Pond32145/output/pacman-contribution-graph.svg#gh-light-mode-only"
-    alt="pacman contribution graph light"
+    src="https://raw.githubusercontent.com/Pond32145/Pond32145/output/github-contribution-grid-snake.svg#gh-light-mode-only"
+    alt="snake light"
   />
-
 </div>
+
 
 
 ###
