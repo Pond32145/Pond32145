@@ -137,6 +137,18 @@
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Pond32145&show_icons=true&theme=dracula" />
 </p>
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pond32145&layout=compact&theme=dracula" />
+</p>
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Pond32145&theme=dracula" />
+</p>
+
+<!--
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Pond32145&layout=compact&theme=dracula)
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Pond32145&theme=dracula)
+ -->
+
 
 
 
