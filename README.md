@@ -116,13 +116,13 @@
   <a href="https://www.linkedin.com/in/naphat-lonu-3429b627a" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  <!-- <a href="https://www.facebook.com/pondnap31" target="_blank">
+  <a href="https://www.facebook.com/pondnap31" target="_blank">
     <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
-  </a> -->
+  </a>
 
-  <!-- <a href="https://www.tiktok.com/@pond_np31" target="_blank">
+  <a href="https://www.tiktok.com/@pond_np31" target="_blank">
     <img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" />
-  </a> -->
+  </a> 
 </div>
 
 
@@ -132,18 +132,19 @@
 <div align="center">
   <!-- <img src="https://streak-stats.demolab.com?user=Pond32145&locale=en&mode=daily&theme=dracula&hide_border=false&border_radius=5&order=3" height="150" alt="streak graph"  /> -->
   <p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pond32145&layout=compact&theme=dracula" />
+</p>
+  <p align="center">
   <img src="https://streak-stats.demolab.com?user=Pond32145&theme=dracula" />
 </p>
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Pond32145&show_icons=true&theme=dracula" />
-</p>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pond32145&layout=compact&theme=dracula" />
-</p>
-<p align="center">
+</p> -->
+
+<!-- <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Pond32145&theme=dracula" />
-</p>
+</p> -->
 
 <!--
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Pond32145&layout=compact&theme=dracula)
