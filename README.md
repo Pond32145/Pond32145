@@ -113,10 +113,10 @@
   <p align="center">
   <img src="https://streak-stats.demolab.com?user=Pond32145&theme=dracula" />
 </p>
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=ts,nextjs,tailwind,aws,dotnet,cs,angular,nodejs" height="60" />
+</div>
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Pond32145&theme=dracula&row=1&column=6" />
-</p>
 
 </div> 
 
