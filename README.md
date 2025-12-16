@@ -77,7 +77,7 @@
 
 <div align="center">
   <img
-    src="https://skillicons.dev/icons?i=ts,nextjs,angular,nodejs,dotnet,cs,postgres,tailwind,bootstrap,aws,docker,jenkins,git"
+    src="https://skillicons.dev/icons?i=ts,nextjs,angular,nodejs,dotnet,cs,postgres,tailwind,bootstrap,aws,docker,jenkins"
     height="80"
   />
 </div>
