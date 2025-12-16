@@ -123,14 +123,15 @@
 
 <div align="center">
   <img
-    src="https://raw.githubusercontent.com/Pond32145/Pond32145/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only"
+    src="https://raw.githubusercontent.com/Pond32145/Pond32145/main/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only"
     alt="snake dark"
   />
   <img
-    src="https://raw.githubusercontent.com/Pond32145/Pond32145/output/github-contribution-grid-snake.svg#gh-light-mode-only"
+    src="https://raw.githubusercontent.com/Pond32145/Pond32145/main/output/github-contribution-grid-snake.svg#gh-light-mode-only"
     alt="snake light"
   />
 </div>
+
 
 
 
