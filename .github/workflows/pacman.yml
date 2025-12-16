@@ -1,8 +1,8 @@
-name: Generate Pacman Contribution Graph
+name: Generate Snake Contribution Graph
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # รันทุกวัน
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -10,18 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Generate pacman graph
-        uses: Platane/pacman-contribution-graph@main
+      - name: Generate snake
+        uses: Platane/snk@v3
         with:
           github_user_name: Pond32145
+          outputs: |
+            output/github-contribution-grid-snake.svg
+            output/github-contribution-grid-snake-dark.svg?palette=github-dark
 
       - name: Commit and push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add .
-          git commit -m "Generate pacman contribution graph" || exit 0
+          git commit -m "Generate snake contribution graph" || exit 0
           git push
