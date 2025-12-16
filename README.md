@@ -55,7 +55,7 @@
 
 ###
 
-<div align="center">
+<!-- <div align="center">
   <img src="https://skillicons.dev/icons?i=ts" height="60" alt="typescript logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=nextjs" height="60" alt="nextjs logo" />
@@ -73,6 +73,10 @@
   <img src="https://skillicons.dev/icons?i=angular" height="60" alt="angular logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=nodejs" height="60" alt="nodejs logo" />
+</div> -->
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=ts,nextjs,tailwind,aws,dotnet,cs,angular,nodejs" height="70" />
 </div>
 
 
@@ -113,9 +117,7 @@
   <p align="center">
   <img src="https://streak-stats.demolab.com?user=Pond32145&theme=dracula" />
 </p>
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=ts,nextjs,tailwind,aws,dotnet,cs,angular,nodejs" height="60" />
-</div>
+
 
 
 </div> 
