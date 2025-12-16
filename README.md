@@ -83,18 +83,7 @@
 </div>
 
 
-<div align="center">
-  <!-- Frontend -->
-  <img src="https://skillicons.dev/icons?i=ts,nextjs,angular,tailwind,bootstrap" height="70" />
-  <br/>
 
-  <!-- Backend -->
-  <img src="https://skillicons.dev/icons?i=nodejs,dotnet,cs,postgres" height="70" />
-  <br/>
-
-  <!-- DevOps / Cloud -->
-  <img src="https://skillicons.dev/icons?i=aws,docker,jenkins,git" height="70" />
-</div>
 
 
 
