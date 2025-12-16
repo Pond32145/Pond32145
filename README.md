@@ -134,6 +134,11 @@
   <img src="https://streak-stats.demolab.com?user=Pond32145&theme=dracula" />
 </p>
 
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Pond32145&show_icons=true&theme=dracula" />
+</p>
+
+
 
 
 </div> 
