@@ -65,7 +65,7 @@
   <img src="https://skillicons.dev/icons?i=aws" height="60" alt="amazonwebservices logo" />
   <img width="12" />
 
-  <!-- NEW ICONS -->
+
   <img src="https://skillicons.dev/icons?i=dotnet" height="60" alt=".NET logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=cs" height="60" alt="C# logo" />
@@ -76,7 +76,7 @@
 </div> -->
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=ts,nextjs,tailwind,aws,dotnet,cs,angular,nodejs" height="70" />
+  <img src="https://skillicons.dev/icons?i=ts,nextjs,tailwind,aws,dotnet,cs,angular,nodejs" height="100" />
 </div>
 
 
