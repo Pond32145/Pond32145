@@ -32,9 +32,12 @@
   <p align="center">
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pond32145&layout=compact&theme=dracula" />
   </p>
-  <p align="center">
+  <!-- <p align="center">
     <img src="https://streak-stats.demolab.com?user=Pond32145&theme=dracula" />
-  </p>
+  </p> -->
+  <p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=Pond32145&theme=dracula&hide_border=true" />
+</p>
 </div>
 
 ###
