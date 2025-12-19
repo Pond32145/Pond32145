@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install termtosvg
@@ -24,9 +24,11 @@ jobs:
 
       - name: Generate static DevOps terminal SVG
         run: |
+          # ล้าง state เก่าทิ้งทั้งหมด
           rm -rf output
-          mkdir -p output
+          mkdir output
 
+          # ❗ ส่งแค่ directory เท่านั้น
           termtosvg --still -c "
           echo 'pond@prod:~$ whoami'
           echo 'pond_np31 (DevOps Engineer)'
@@ -46,7 +48,7 @@ jobs:
 
           mv output/termtosvg.svg output/terminal.svg
 
-      - name: Commit and push
+      - name: Commit and push SVG
         uses: EndBug/add-and-commit@v9
         with:
           message: "chore: update devops terminal"
