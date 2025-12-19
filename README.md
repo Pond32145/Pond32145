@@ -55,11 +55,12 @@
 </div>
 
 
-
+<!--
 ### 📊 DevOps Metrics
 
 <p align="center">
   <img src="./output/terminal.svg" />
 </p>
+-->
 
 
