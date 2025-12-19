@@ -2,7 +2,7 @@
 <h1 align="center">Hey 👋What's Up?</h1>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/3o7TKsQ7o0q72i6WkE/giphy.gif" width="300"/>
+  <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMm13dWlyMmJ2ajhqM2o5d28zcDk1OHZmdzcxbnI1aTA4dnRsbDFhbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78XCFBGOlS6keY1Bil/giphy.gif" width="300"/>
 </p>
 
 
