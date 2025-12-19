@@ -1,34 +1,32 @@
 name: DevOps Terminal
 
-# 🔐 สำคัญมาก ไม่งั้น push ไม่ได้ (403)
 permissions:
   contents: write
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */12 * * *" # รันทุก 12 ชม.
+    - cron: "0 */12 * * *"
 
 jobs:
   generate-terminal:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ checkout repo
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # 2️⃣ install termtosvg
       - name: Install termtosvg
         run: |
           sudo apt-get update
           sudo apt-get install -y python3-pip
           pip3 install termtosvg
 
-      # 3️⃣ สร้าง static terminal (ไม่กระพริบ)
       - name: Generate static DevOps terminal SVG
         run: |
-          mkdir -p assets
+          rm -rf output
+          mkdir -p output
+
           termtosvg --still -c "
           echo 'pond@prod:~$ whoami'
           echo 'pond_np31 (DevOps Engineer)'
@@ -42,16 +40,13 @@ jobs:
           echo 'worker     Running'
           echo 'postgres   Running'
           echo ''
-          echo 'pond@prod:~$ docker ps'
-          echo 'api-service      healthy'
-          echo 'frontend         healthy'
-          echo ''
           echo 'pond@prod:~$ uptime'
           echo 'production running since 2022 ☁️'
-          " output/terminal.svg
+          " output
 
-      # 4️⃣ commit + push
-      - name: Commit and push SVG
+          mv output/termtosvg.svg output/terminal.svg
+
+      - name: Commit and push
         uses: EndBug/add-and-commit@v9
         with:
           message: "chore: update devops terminal"
