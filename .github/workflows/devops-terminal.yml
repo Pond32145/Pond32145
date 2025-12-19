@@ -1,3 +1,86 @@
+# name: DevOps Terminal
+
+# permissions:
+#   contents: write
+
+# on:
+#   workflow_dispatch:
+#   schedule:
+#     - cron: "0 */12 * * *"
+
+# jobs:
+#   terminal:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       # 1️⃣ Checkout
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+
+#       # 2️⃣ Install termtosvg
+#       - name: Install termtosvg
+#         run: |
+#           sudo apt-get update
+#           sudo apt-get install -y python3-pip
+#           pip3 install termtosvg
+
+#       # 3️⃣ Generate static terminal SVG (NO BLINK / NO ERROR)
+#       - name: Generate DevOps terminal SVG
+#         shell: bash
+#         run: |
+#           set -e
+
+#           # ล้าง state เก่าทั้งหมด
+#           rm -rf output
+#           mkdir output
+
+#           # สร้าง terminal (ส่งเฉพาะ directory เท่านั้น)
+#           termtosvg --still -c "
+#           echo 'pond@prod:~$ whoami'
+#           echo 'pond_np31 (DevOps Engineer)'
+#           echo ''
+#           echo 'pond@prod:~$ kubectl get nodes'
+#           echo 'prod-node-1   Ready'
+#           echo 'prod-node-2   Ready'
+#           echo ''
+#           echo 'pond@prod:~$ kubectl get pods'
+#           echo 'api        Running'
+#           echo 'worker     Running'
+#           echo 'postgres   Running'
+#           echo ''
+#           echo 'pond@prod:~$ docker ps'
+#           echo 'api-service      healthy'
+#           echo 'frontend         healthy'
+#           echo ''
+#           echo 'pond@prod:~$ uptime'
+#           echo 'production running since 2022 ☁️'
+#           " output
+
+#           echo "Generated files:"
+#           ls -la output
+
+#           # หา SVG ที่ถูกสร้าง (ไม่ assume ชื่อ)
+#           SVG_FILE=$(ls output/*.svg | head -n 1)
+
+#           # rename เป็นชื่อที่เราต้องการ
+#           mv "$SVG_FILE" output/terminal.svg
+
+#           echo "Final artifact:"
+#           ls -la output/terminal.svg
+
+#       # 4️⃣ Commit + Push
+#       - name: Commit and push SVG
+#         uses: EndBug/add-and-commit@v9
+#         with:
+#           message: "chore: update devops terminal"
+#           add: "output/terminal.svg"
+
+
+
+
+
+
+
 name: DevOps Terminal
 
 permissions:
@@ -5,72 +88,51 @@ permissions:
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 */12 * * *"
 
 jobs:
   terminal:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # 2️⃣ Install termtosvg
       - name: Install termtosvg
         run: |
           sudo apt-get update
           sudo apt-get install -y python3-pip
           pip3 install termtosvg
 
-      # 3️⃣ Generate static terminal SVG (NO BLINK / NO ERROR)
-      - name: Generate DevOps terminal SVG
+      - name: Generate static DevOps terminal SVG
         shell: bash
         run: |
           set -e
 
-          # ล้าง state เก่าทั้งหมด
           rm -rf output
           mkdir output
 
-          # สร้าง terminal (ส่งเฉพาะ directory เท่านั้น)
-          termtosvg --still -c "
-          echo 'pond@prod:~$ whoami'
-          echo 'pond_np31 (DevOps Engineer)'
-          echo ''
-          echo 'pond@prod:~$ kubectl get nodes'
-          echo 'prod-node-1   Ready'
-          echo 'prod-node-2   Ready'
-          echo ''
-          echo 'pond@prod:~$ kubectl get pods'
-          echo 'api        Running'
-          echo 'worker     Running'
-          echo 'postgres   Running'
-          echo ''
-          echo 'pond@prod:~$ docker ps'
-          echo 'api-service      healthy'
-          echo 'frontend         healthy'
-          echo ''
-          echo 'pond@prod:~$ uptime'
-          echo 'production running since 2022 ☁️'
-          " output
+          termtosvg \
+            --still \
+            --command "bash -lc '
+              echo \"pond@prod:~$ whoami\"
+              echo \"pond_np31 (DevOps Engineer)\"
+              echo
+              echo \"pond@prod:~$ kubectl get pods\"
+              echo \"api        Running\"
+              echo \"worker     Running\"
+              echo \"postgres   Running\"
+              echo
+              echo \"pond@prod:~$ uptime\"
+              echo \"production running since 2022 ☁️\"
+            '" \
+            output
 
-          echo "Generated files:"
-          ls -la output
-
-          # หา SVG ที่ถูกสร้าง (ไม่ assume ชื่อ)
           SVG_FILE=$(ls output/*.svg | head -n 1)
-
-          # rename เป็นชื่อที่เราต้องการ
           mv "$SVG_FILE" output/terminal.svg
 
-          echo "Final artifact:"
-          ls -la output/terminal.svg
-
-      # 4️⃣ Commit + Push
-      - name: Commit and push SVG
+      - name: Commit SVG
         uses: EndBug/add-and-commit@v9
         with:
           message: "chore: update devops terminal"
           add: "output/terminal.svg"
+
