@@ -56,21 +56,10 @@
 
 
 
-### 🖥 Terminal
+### 📊 DevOps Metrics
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com
-?font=Fira+Code
-&size=16
-&pause=800
-&color=50FA7B
-&background=282A36
-&center=true
-&vCenter=true
-&width=700
-&lines=%24+whoami;pond_np31;%24+uptime;coding+since+2022+🚀" />
+  <img src="./assets/metrics.svg" />
 </p>
-
-### 
 
 
