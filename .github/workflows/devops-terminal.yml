@@ -8,35 +8,48 @@ on:
 jobs:
   terminal:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install svg-term
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nodejs npm
+          sudo npm install -g svg-term-cli
 
       - name: Generate terminal SVG
-        uses: DenverCoder1/readme-typing-svg@v3
-        with:
-          lines: |
-            $ whoami
-            pond_np31 (DevOps Engineer)
-            $ kubectl get nodes
-            prod-node-1 Ready
-            prod-node-2 Ready
-            $ docker ps
-            api-service running
-            web-frontend running
-            postgres healthy
-            $ terraform plan
-            No changes. Infrastructure is up-to-date.
-            $ uptime
-            production running since 2022 ☁️
+        run: |
+          cat << 'EOF' > session.txt
+          pond@prod:~$ whoami
+          pond_np31 (DevOps Engineer)
 
-          font: Fira Code
-          color: 50FA7B
-          background: 282A36
-          width: 900
-          height: 420
-          path: output/terminal.svg
+          pond@prod:~$ kubectl get nodes
+          prod-node-1 Ready
+          prod-node-2 Ready
 
-      - name: Commit SVG
+          pond@prod:~$ docker ps
+          api-service running
+          web-frontend running
+          postgres healthy
+
+          pond@prod:~$ terraform plan
+          No changes. Infrastructure is up-to-date.
+
+          pond@prod:~$ uptime
+          production running since 2022 ☁️
+          EOF
+
+          svg-term \
+            --in session.txt \
+            --out output/terminal.svg \
+            --window \
+            --width 80 \
+            --height 24 \
+            --profile dracula
+
+      - name: Commit terminal SVG
         uses: EndBug/add-and-commit@v9
         with:
           message: "chore: update devops terminal"
