@@ -1,64 +1,58 @@
 name: DevOps Terminal
 
+# 🔐 สำคัญมาก ไม่งั้น push ไม่ได้ (403)
 permissions:
   contents: write
 
 on:
-  schedule:
-    - cron: "0 */12 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: "0 */12 * * *" # รันทุก 12 ชม.
 
 jobs:
-  terminal:
+  generate-terminal:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      # 1️⃣ checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install tools
+      # 2️⃣ install termtosvg
+      - name: Install termtosvg
         run: |
           sudo apt-get update
-          sudo apt-get install -y asciinema nodejs npm
-          sudo npm install -g svg-term-cli
+          sudo apt-get install -y python3-pip
+          pip3 install termtosvg
 
-      - name: Record terminal session
+      # 3️⃣ สร้าง static terminal (ไม่กระพริบ)
+      - name: Generate static DevOps terminal SVG
         run: |
-          cat << 'EOF' > session.sh
-          echo "pond@prod:~$ whoami"
-          echo "pond_np31 (DevOps Engineer)"
-          echo ""
-          echo "pond@prod:~$ kubectl get nodes"
-          echo "prod-node-1   Ready"
-          echo "prod-node-2   Ready"
-          echo ""
-          echo "pond@prod:~$ docker ps"
-          echo "api-service        running"
-          echo "web-frontend       running"
-          echo "postgres-db        healthy"
-          echo ""
-          echo "pond@prod:~$ terraform plan"
-          echo "No changes. Infrastructure is up-to-date."
-          echo ""
-          echo "pond@prod:~$ uptime"
-          echo "production running since 2022 ☁️"
-          EOF
+          mkdir -p assets
+          termtosvg --still -c "
+          echo 'pond@prod:~$ whoami'
+          echo 'pond_np31 (DevOps Engineer)'
+          echo ''
+          echo 'pond@prod:~$ kubectl get nodes'
+          echo 'prod-node-1   Ready'
+          echo 'prod-node-2   Ready'
+          echo ''
+          echo 'pond@prod:~$ kubectl get pods'
+          echo 'api        Running'
+          echo 'worker     Running'
+          echo 'postgres   Running'
+          echo ''
+          echo 'pond@prod:~$ docker ps'
+          echo 'api-service      healthy'
+          echo 'frontend         healthy'
+          echo ''
+          echo 'pond@prod:~$ uptime'
+          echo 'production running since 2022 ☁️'
+          " output/terminal.svg
 
-          asciinema rec session.cast \
-            --command "bash session.sh" \
-            --cols 80 --rows 24 \
-            --quiet
-
-      - name: Render SVG terminal
-        run: |
-          svg-term \
-            --in session.cast \
-            --out output/terminal.svg \
-            --window \
-            --width 80 \
-            --height 24
-
-      - name: Commit terminal SVG
+      # 4️⃣ commit + push
+      - name: Commit and push SVG
         uses: EndBug/add-and-commit@v9
         with:
           message: "chore: update devops terminal"
+          add: "output/terminal.svg"
