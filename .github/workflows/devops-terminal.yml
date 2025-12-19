@@ -34,7 +34,7 @@ jobs:
           background: 282A36
           width: 900
           height: 420
-          path: assets/terminal.svg
+          path: output/terminal.svg
 
       - name: Commit SVG
         uses: EndBug/add-and-commit@v9
