@@ -59,7 +59,7 @@
 ### 📊 DevOps Metrics
 
 <p align="center">
-  <img src="./assets/metrics.svg" />
+  <img src="./output/metrics.svg" />
 </p>
 
 
