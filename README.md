@@ -1,10 +1,10 @@
 
+<h1 align="center">Hey 👋What's Up?</h1>
 
 <p align="center">
   <img src="https://media.giphy.com/media/3o7TKsQ7o0q72i6WkE/giphy.gif" width="300"/>
 </p>
 
-<h1 align="center">Hey 👋What's Up?</h1>
 
 ###
 
