@@ -38,9 +38,9 @@
   <p align="center">
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pond32145&layout=compact&theme=dracula" />
   </p>
-  <p align="center">
+  <!-- <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com?user=Pond32145&theme=dracula&hide_border=true" />
-</p>
+</p> -->
 </div>
 
 ###
@@ -54,7 +54,23 @@
     alt="snake light" />
 </div>
 
-### 
 
+
+### 🖥 Terminal
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com
+?font=Fira+Code
+&size=16
+&pause=800
+&color=50FA7B
+&background=282A36
+&center=true
+&vCenter=true
+&width=700
+&lines=%24+whoami;pond_np31;%24+uptime;coding+since+2022+🚀" />
+</p>
+
+### 
 
 
