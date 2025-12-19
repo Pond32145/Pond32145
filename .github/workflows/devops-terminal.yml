@@ -9,26 +9,32 @@ on:
     - cron: "0 */12 * * *"
 
 jobs:
-  generate-terminal:
+  terminal:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Install termtosvg
       - name: Install termtosvg
         run: |
           sudo apt-get update
           sudo apt-get install -y python3-pip
           pip3 install termtosvg
 
-      - name: Generate static DevOps terminal SVG
+      # 3️⃣ Generate static terminal SVG (NO BLINK / NO ERROR)
+      - name: Generate DevOps terminal SVG
+        shell: bash
         run: |
-          # ล้าง state เก่าทิ้งทั้งหมด
+          set -e
+
+          # ล้าง state เก่าทั้งหมด
           rm -rf output
           mkdir output
 
-          # ❗ ส่งแค่ directory เท่านั้น
+          # สร้าง terminal (ส่งเฉพาะ directory เท่านั้น)
           termtosvg --still -c "
           echo 'pond@prod:~$ whoami'
           echo 'pond_np31 (DevOps Engineer)'
@@ -42,12 +48,27 @@ jobs:
           echo 'worker     Running'
           echo 'postgres   Running'
           echo ''
+          echo 'pond@prod:~$ docker ps'
+          echo 'api-service      healthy'
+          echo 'frontend         healthy'
+          echo ''
           echo 'pond@prod:~$ uptime'
           echo 'production running since 2022 ☁️'
           " output
 
-          mv output/termtosvg.svg output/terminal.svg
+          echo "Generated files:"
+          ls -la output
 
+          # หา SVG ที่ถูกสร้าง (ไม่ assume ชื่อ)
+          SVG_FILE=$(ls output/*.svg | head -n 1)
+
+          # rename เป็นชื่อที่เราต้องการ
+          mv "$SVG_FILE" output/terminal.svg
+
+          echo "Final artifact:"
+          ls -la output/terminal.svg
+
+      # 4️⃣ Commit + Push
       - name: Commit and push SVG
         uses: EndBug/add-and-commit@v9
         with:
